@@ -1,2 +1,2 @@
 # Barangay-Management-System
-Thesis
+Thesis of BSCS 3rd year student in Upang U
