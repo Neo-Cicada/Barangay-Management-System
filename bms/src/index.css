@@ -3,6 +3,7 @@
 }
 
 body {
+    background-color: rgb(231, 229, 229);
     margin: 0;
 }
 
@@ -14,6 +15,7 @@ body {
 .nav {
     background-color: #3b5998;
     color: white;
+    font-family: 'Helvetica Neue';
     display: flex;
     justify-content: space-between;
     align-items: stretch;
