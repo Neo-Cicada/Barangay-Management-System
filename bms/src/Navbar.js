@@ -1,4 +1,5 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import React from "react"
 
 export default function Navbar() {
   return (
@@ -17,12 +18,23 @@ export default function Navbar() {
 function CustomLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+  const [showSubmenu, setShowSubmenu] = React.useState(false)
 
   return (
-    <li className={isActive ? "active" : ""}>
+    <li className={isActive ? "active" : ""} onMouseEnter={() => setShowSubmenu(true)} onMouseLeave={() => setShowSubmenu(false)}>
       <Link to={to} {...props}>
         {children}
       </Link>
+      {to === '/services' && (
+        <ul style={{display: showSubmenu ? 'block' : 'none'}}>
+          <CustomLink to="/services/Enrollment">Enrollment</CustomLink>
+          <CustomLink to="/services/Medecine">Medecine</CustomLink>
+          <CustomLink to="/services/Equipments">Equipments</CustomLink>
+          <CustomLink to="/services/Facilities">Facilities</CustomLink>
+
+
+        </ul>
+      )}
     </li>
   )
 }
