@@ -21,6 +21,7 @@ body {
     align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
+    
 }
 
 .site-title {
@@ -45,9 +46,23 @@ body {
 }
 
 .nav li.active {
-    background-color: #555;
+    /* background-color: #f6f6f6; */
+    border-radius: 10px;
+
+    color: black;
 }
 
 .nav li:hover {
-    background-color: #777;
+    border-radius: 10px;
+    background-color: #f6f6f6;
 }
+
+.submenu {
+    background-color: #f6f6f6;
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+  }
+  

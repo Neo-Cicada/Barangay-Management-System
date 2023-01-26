@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import React from "react"
 
@@ -26,9 +27,9 @@ function CustomLink({ to, children, ...props }) {
         {children}
       </Link>
       {to === '/services' && (
-        <ul style={{display: showSubmenu ? 'block' : 'none'}}>
-          <CustomLink to="/services/Enrollment">Enrollment</CustomLink>
-          <CustomLink to="/services/Medecine">Medecine</CustomLink>
+        <ul className="dropdown-menu " style={{display: showSubmenu ? 'block' : 'none'}}>
+          <CustomLink to="/certificate">Enrollment</CustomLink>
+          <CustomLink to="/services/Medecine">Medicine</CustomLink>
           <CustomLink to="/services/Equipments">Equipments</CustomLink>
           <CustomLink to="/services/Facilities">Facilities</CustomLink>
 
