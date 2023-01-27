@@ -28,10 +28,12 @@ function CustomLink({ to, children, ...props }) {
       </Link>
       {to === '/services' && (
         <ul className="dropdown-menu " style={{display: showSubmenu ? 'block' : 'none'}}>
-          <CustomLink to="/certificate">Enrollment</CustomLink>
-          <CustomLink to="/services/Medecine">Medicine</CustomLink>
-          <CustomLink to="/services/Equipments">Equipments</CustomLink>
-          <CustomLink to="/services/Facilities">Facilities</CustomLink>
+          <CustomLink to="/enrollment">Enrollment</CustomLink>
+          <CustomLink to="/medicine">Medicine</CustomLink>
+          <CustomLink to="/equipment">Equipments</CustomLink>
+          <CustomLink to="/facilities">Facilities</CustomLink>
+          <CustomLink to="/certificate">Certificates</CustomLink>
+
 
 
         </ul>
