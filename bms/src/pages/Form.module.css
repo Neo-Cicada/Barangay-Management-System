@@ -1,11 +1,25 @@
 .form {
-    width: 50%;
+    width: 70%;
+    
     margin: 0 auto;
+    margin-top: 120px;
     padding: 20px;
     background-color: #f2f2f2;
     border-radius: 10px;
   }
-  
+  .container{
+    display: flex;
+  }
+  .firstChild{
+    flex: 1;
+    margin-right: 20px;
+  }
+  .secondChild{
+    flex: 1;
+    margin-right: 6px;
+    margin-left: 20px;
+  }
+
   .label {
     font-size: 16px;
     font-weight: bold;
@@ -22,7 +36,7 @@
   }
   
   .submit {
-    width: 100%;
+    width: 50%;
     background-color: #00a400;
     color: white;
     padding: 14px 20px;
@@ -34,5 +48,6 @@
   
   .submit:hover {
     background-color: #45a049;
+  
   }
   

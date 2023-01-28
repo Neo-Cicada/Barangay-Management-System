@@ -20,7 +20,11 @@ body {
     justify-content: space-between;
     align-items: stretch;
     gap: 2rem;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%;
     padding: 0 1rem;
+    
     
 }
 
