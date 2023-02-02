@@ -10,6 +10,13 @@
   .container{
     display: flex;
   }
+  .bullet{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
   .firstChild{
     flex: 1;
     margin-right: 20px;
@@ -50,4 +57,5 @@
     background-color: #45a049;
   
   }
+  
   
