@@ -1,104 +1,65 @@
 import React, { useState } from 'react';
 import style from './Form.module.css';
-export default function Form() {
-  const [lastname, setLastname] = useState('');
-  const [firstname, setFirstname] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
 
+import { database } from '../firebaseConfig';
+
+import {collection, addDoc} from 'firebase/firestore'
+
+export default function Form() {
+  const [ data, setData] = useState({});
+  const collectionRef = collection(database, 'users');
+
+  const handleInput = (event) => {
+    let newInput = {[event.target.name]: event.target.value};
+
+    setData({...data, ...newInput});
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Form submitted with lastname:', lastname, 'firstname:', firstname, 'phone:', phone, 'email:', email);
-  }
+    addDoc(collectionRef, {
+      lastname: data.lastname,
+      firstname: data.firstname,
+      phone: data.phone,
+      email: data.email 
+    })
+      .then(() =>{
+        alert("Data Added");
+      })
+      .catch((err)=>{
+        alert(err.message);
+      });
+  };
+  
 
   return (
-    
-    <form onSubmit={handleSubmit} className={style.form}>
+    <form  className={style.form}>
       <h1>Enrollment</h1>
       <div className={style.container}>
         <div className={style.firstChild} >
-          <label for="Lastname" className={style.label}>Lastname</label>
-          <input type="name" className={style.input} id="Lastname" value={lastname} onChange={(event) => setLastname(event.target.value)}>
-          </input>
+          <label htmlFor="lastname" className={style.label}>Lastname</label>
+          <input type="name" className={style.input} id="lastname" name="lastname" onChange={(event)=> handleInput(event)} />
         </div>
 
         <div className={style.secondChild}>
-          <label for="Firstname" className={style.label} >Firstname</label>
-          <input type="name" className={style.input} id="Firstname" value={firstname} onChange={(event) => setFirstname(event.target.value)}>
-          </input>
+          <label htmlFor="firstname" className={style.label} >Firstname</label>
+          <input type="name" className={style.input} id="firstname" name="firstname" onChange={(event)=> handleInput(event)} />
         </div>
       </div>
 
       <div className={style.container}>
         <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
+          <label htmlFor="phone" className={style.label}>Phone number</label>
+          <input type="tel" id="phone" name="phone" className={style.input} onChange={(event)=> handleInput(event)} />
         </div>
 
         <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
+          <label htmlFor="email" className={style.label}>Email</label>
+          <input type="email" id="email" name="email" className={style.input} onChange={(event)=> handleInput(event)} />
         </div>
       </div>
 
-
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
-      <input type="submit" value="Submit" className={style.submit} />
+      <input type="submit" id="submit"  className={style.submit} onClick={handleSubmit} />
     </form>
   );
 }
-
