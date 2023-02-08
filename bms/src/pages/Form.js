@@ -34,7 +34,7 @@ export default function Form() {
 
   return (
     <form  className={style.form}>
-      <h1>Enrollment</h1>
+      <h1>Sample form</h1>
       <div className={style.container}>
         <div className={style.firstChild} >
           <label htmlFor="lastname" className={style.label}>Lastname</label>
