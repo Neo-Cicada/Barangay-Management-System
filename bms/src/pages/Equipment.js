@@ -24,7 +24,7 @@ export default function Equipment() {
 
   return (
     <form onSubmit={handleSubmit} className={style.form}>
-      <h1>Equipment</h1>
+      <h1>Equipment Request Form</h1>
       <div className={style.container}>
         <div className={style.firstChild} >
           <label for="Lastname" className={style.label}>Lastname</label>

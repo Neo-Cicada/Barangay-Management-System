@@ -15,7 +15,7 @@ export default function Facilities(){
     }
     return(
         <form onSubmit={handleSubmit} className={style.form}>
-      <h1>Facility Form</h1>
+      <h1>Facility Reservation form</h1>
       <div className={style.container}>
         <div className={style.firstChild} >
           <label for="Lastname" className={style.label}>Lastname</label>
@@ -45,58 +45,8 @@ export default function Facilities(){
       </div>
 
 
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
-      <div className={style.container}>
-        <div className={style.firstChild}>
-          <label for="phone-no" className={style.label}>Phone number</label>
-          <input type="tel" id="phone-no" className={style.input} value={phone} onChange={(event) => setPhone(event.target.value)}>
-          </input>
-        </div>
-
-        <div className={style.secondChild}>
-          <label for="phone-no" className={style.label}>Email</label>
-          <input type="email" id="email" className={style.input} value={email} onChange={(event) => setEmail(event.target.value)}>
-          </input>
-        </div>
-      </div>
+      
+      
       <input type="submit" value="Submit" className={style.submit} />
     </form>
     )
