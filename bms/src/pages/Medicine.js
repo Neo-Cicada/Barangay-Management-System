@@ -58,13 +58,28 @@ export default function Medicine() {
       <div className={style.container}>
         <div className={style.firstChild} >
           <label htmlFor="lastname" className={style.label}>Last Name</label>
-          <input type="name" className={style.input} name="lastname" id="lastname" onChange={(event) => handleInput(event)} required >
+          <input 
+            type="name" 
+            className={style.input} 
+            name="lastname" 
+            id="lastname"
+            onChange={(event) => handleInput(event)} 
+            required >
           </input>
         </div>
 
         <div className={style.secondChild}>
-          <label htmlFor="firstname" className={style.label} >Firstname</label>
-          <input type="name" className={style.input} name="firstname" id="firstname" onChange={(event) => handleInput(event)} required>
+          <label 
+            htmlFor="firstname" 
+            className={style.label} >
+            Firstname
+          </label>
+          <input 
+            type="name" 
+            className={style.input} 
+            name="firstname" 
+            id="firstname" 
+            onChange={(event) => handleInput(event)} required>
           </input>
         </div>
       </div>
